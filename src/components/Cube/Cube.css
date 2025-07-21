@@ -7,14 +7,14 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  background-color: #000;
+ background: #000;
   color: #fff;
   overflow-x: hidden;
 }
 
 .hero-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+  
   position: relative;
 }
 

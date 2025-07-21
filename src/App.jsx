@@ -17,6 +17,7 @@ import WebDesigning from './components/WhyChooseBranding/WebDesigning'
 import SEO from './components/WhyChooseBranding/SEO'
 import ADS from './components/WhyChooseBranding/ADS'
 import PhotoGraphy from './components/WhyChooseBranding/PhotoGraphy'
+import VideoGraphy from './components/WhyChooseBranding/VideoGraphy'
 
 
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
    <Route path='/services/seo' element={<SEO/>}/>
    <Route path='/services/paid-ads' element={<ADS/>}/>
    <Route path='/services/photo-graphy' element={<PhotoGraphy/>}/>
+   <Route path='/services/video-graphy' element={<VideoGraphy/>}/>
   
 
    </Routes>

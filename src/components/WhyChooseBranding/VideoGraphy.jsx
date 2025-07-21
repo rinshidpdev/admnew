@@ -1,49 +1,52 @@
 import React from 'react';
 import './WhyChooseBranding.css';
-import ph1 from '../../assets/ph6.jpg'
-import ph2 from '../../assets/ph2.jpg'
-import ph3 from '../../assets/ph3.jpg'
-import ph4 from '../../assets/ph4.jpg'
-import ph5 from '../../assets/ph5.jpg'
+import v1 from '../../assets/v1.jpg'
+import v2 from '../../assets/v2.jpg'
+import v3 from '../../assets/v3.jpg'
+import v4 from '../../assets/v4.jpg'
+import v5 from '../../assets/v5.jpg'
 
 const VideoGraphy = () => {
   const features = [
-    {
-      id: 1,
-      title: "Product Shoot",
-      subtitle: "Showcase Your Product in Its Best Light",
-      description: "In today’s visual world, quality imagery can make or break your brand. Professional product photography doesn't just capture objects — it tells a story, builds trust, and drives sales. From clean e-commerce shots to creative lifestyle imagery, a powerful product shoot highlights every detail, making your brand stand out in a crowded market and helping customers connect before they even click buy",
-      image: ph5,
-      imageAlt: "Brand consistency mockup",
-      layout: "left"
-    },
-    {
-      id: 2,
-      title: " Industrial & Real Estate Shoot",
-      subtitle: "Bring Big Spaces and Bold Structures to Life",
-      description: "In industries where precision and scale matter, high-quality visuals are key. Whether it’s a sprawling factory, a buzzing warehouse, or a luxury real estate property, professional shoots showcase the size, efficiency, and design of",
-      image: ph4,
-      imageAlt: "Brand differentiation 3D design",
-      layout: "right"
-    },
-    {
-      id: 3,
-      title: "Event Shoot",
-      subtitle: "Capture Moments That Matter",
-      description: "Every event is a story unfolding — and great photography ensures it’s remembered forever. From corporate gatherings and product launches to weddings and cultural festivals, a professional event shoot captures the energy, emotion, and key highlights in every frame. These images not only preserve memories but also serve as powerful content for social media, marketing, and future promotions",
-      image: ph2,
-      imageAlt: "Branding strategy diagram",
-      layout: "left"
-    },
-    {
-      id: 4,
-      title: "Food Shoot",
-      subtitle: "Make Taste Visible Through Stunning Visuals",
-      description: "In the world of food, people eat with their eyes first. A professional food shoot captures the texture, color, and flavor of every dish — turning meals into mouth-watering visuals. Whether it's for a restaurant menu, social media, or a delivery app, high-quality food photography helps you attract customers, build cravings, and create a brand that’s impossible to ignore.",
-      image: ph3,
-      imageAlt: "Pump neon sign",
-      layout: "right"
-    }
+ 
+  {
+    id: 1,
+    title: "Product Videography",
+    subtitle: "Make Every Angle Speak for Your Brand",
+    description: "From sleek unboxings to cinematic product demos, videography transforms your product into an experience. Whether it's a tech gadget, beauty item, or lifestyle essential, we craft visuals that highlight function, beauty, and uniqueness — building desire and trust with every frame.",
+    image: v1, // replace with your video thumb or image
+    imageAlt: "Product showcase video still",
+    layout: "left"
+  },
+  {
+    id: 2,
+    title: "School & Educational Films",
+    subtitle: "Capture Learning, Growth, and Legacy",
+    description: "Educational videography brings institutions to life. From annual day highlights to admission promos, we document moments that reflect school spirit, student achievements, and a nurturing environment. These videos serve as powerful tools for branding, admissions, and memories that last a lifetime.",
+    image: v3,
+    imageAlt: "School event videography",
+    layout: "right"
+  },
+  {
+    id: 3,
+    title: "Jewelry Videography",
+    subtitle: "Craft Elegance in Motion",
+    description: "Jewelry is all about detail, sparkle, and emotion — and our videography captures that magic. Using macro lenses, smooth motion, and dramatic lighting, we create luxury visuals that highlight every cut, shimmer, and story behind your designs. Perfect for catalogs, ads, and social media.",
+    image: v4,
+    imageAlt: "Jewelry macro videography still",
+    layout: "left"
+  },
+  {
+    id: 4,
+    title: "Cargo & Logistics Videography",
+    subtitle: "Visualize Scale, Speed, and Reliability",
+    description: "In the logistics world, operations speak louder than words. Our cargo videography showcases efficiency, infrastructure, and global reach — from warehouse shots and freight loading to fleet operations. Ideal for company profiles, investor decks, and marketing assets that build trust and authority.",
+    image: v5,
+    imageAlt: "Cargo and transport drone shot",
+    layout: "right"
+  }
+
+
   ];
 
   return (
@@ -62,7 +65,7 @@ const VideoGraphy = () => {
           </div>
           <div className="branding-right">
             <div className="branding-image-container">
-              <img src={ph1} alt="Neon sign" className="branding-image" />
+              <img src={v2} alt="Neon sign" className="branding-image" />
             </div>
           </div>
         </div>
