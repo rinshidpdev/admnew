@@ -1,6 +1,6 @@
 .service-section {
   display: flex;
-  background: #000;
+  
   color: #fff;
   padding: 60px 80px;
   gap: 60px;
@@ -102,31 +102,46 @@
   position: relative;
   z-index: 1;
 }
-
-.cont h1{
-  font-family: 'Roboto', sans-serif;
-  font-size: 3rem; /* Adjust size as needed */
-  font-weight: 400; /* Or 500 for bolder look */
-  color: white;
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* optional, if you want vertical centering too */
+  text-align: center;
+  padding: 20px;
 }
 
-.cont h2{
+.cont h1,
+.cont span {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+
+.cont h2 {
   font-family: 'Playfair Display', serif;
   font-style: italic;
-  font-size: 3rem; 
-  text-align: center;
-  margin-top: 20px; 
-}
-.cont span{
-   font-family: 'Roboto', sans-serif;
-  font-size: 3rem; /* Adjust size as needed */
-  font-weight: 400; /* Or 500 for bolder look */
-  color: white;
-  text-align: center;
+  font-size: 3rem;
+  margin-top: 20px;
 }
 
-.cont p{
-  text-align: center;
+.cont p {
+  font-size: 1rem;
   margin-top: 8px;
-  font-size: medium;
+  color: white;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  .cont h1,
+  .cont h2,
+  .cont span {
+    font-size: 2rem;
+  }
+
+  .cont p {
+    font-size: 0.9rem;
+  }
 }

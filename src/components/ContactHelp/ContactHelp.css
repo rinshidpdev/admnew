@@ -40,10 +40,14 @@
   position: relative;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.02);
   transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 .contact-card:hover {
   transform: translateY(-5px);
+  text-decoration: none;
+  color: inherit;
 }
 
 .card-icon {

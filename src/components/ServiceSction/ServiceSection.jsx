@@ -5,7 +5,7 @@ import girl from '../../assets/girl.png'
 const ServiceSection = () => {
   return (
     <div className="service-section">
-      <div className="service-left">
+      <div className="service-left" data-aos="fade-right">
         <img
           src={girl}
           alt="Team Working"
@@ -22,7 +22,7 @@ const ServiceSection = () => {
         </p>
       </div>
 
-      <div className="service-right">
+      <div className="service-right" data-aos="fade-left">
         <div className="service-box hover-bg">
           <div className="number">01.</div>
           <div className="content">
@@ -58,7 +58,7 @@ const ServiceSection = () => {
         </div>
         
       </div>
-      <div className="cont">
+      <div className="cont" data-aos="zoom-in-right">
           <h1>Fuel your business growth with digital solutions</h1>
            <h2> <span>from</span>  ADM Agency</h2>
            <p>Our expert team at ADM Agency delivers strategic solutions designed to enhance your <br /> brand presence, optimize digital performance, and streamline operations</p>

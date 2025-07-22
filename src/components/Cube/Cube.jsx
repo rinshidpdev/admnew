@@ -45,13 +45,13 @@ const Cube = () => {
 // Main Hero Section
 const StrategicMarketingHero = () => {
   return (
-    <div className="hero-container">
+    <div className="hero-container" >
       <div className="hero-content">
-        <div className="left-section">
+        <div className="left-section" data-aos="fade-right">
           <Cube />
         </div>
 
-        <div className="right-section">
+        <div className="right-section" data-aos="fade-left">
           <div className="content-wrapper">
             <h1 className="main-title">
               STRATEGIC

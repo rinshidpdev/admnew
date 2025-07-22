@@ -1,198 +1,162 @@
 import React, { useState, useEffect, useRef } from 'react';
+import cl1 from '../../assets/client1.png';
+import cl2 from '../../assets/client2.png';
+import cl3 from '../../assets/client3.png';
+import cl4 from '../../assets/client4.png';
+import cl5 from '../../assets/client5.png';
+import cl6 from '../../assets/client6.png';
+import cl7 from '../../assets/client7.png';
+import cl8 from '../../assets/client8.png';
+import cl9 from '../../assets/client9.png';
+import cl10 from '../../assets/client10.png';
+import cl11 from '../../assets/client11.png';
+
 
 const Clients = () => {
-  // Sample client logos - replace with your actual client logo paths
   const allClients = [
-    { id: 1, name: 'Berkeley', logo: '/path/to/berkeley-logo.png' },
-    { id: 2, name: 'Bin Hendi', logo: '/path/to/binhendi-logo.png' },
-    { id: 3, name: 'Al Fattan', logo: '/path/to/alfattan-logo.png' },
-    { id: 4, name: 'Al Ghurair', logo: '/path/to/alghurair-logo.png' },
-    { id: 5, name: 'Al Hilal Bank', logo: '/path/to/alhilal-logo.png' },
-    { id: 6, name: 'Client 6', logo: '/path/to/client6-logo.png' },
-
+    { id: 1, name: 'Berkeley', logo: cl1 },
+    { id: 2, name: 'Bin Hendi', logo: cl2 },
+    { id: 3, name: 'Al Fattan', logo: cl3 },
+    { id: 4, name: 'Al Ghurair', logo: cl4 },
+   
+    { id: 6, name: 'Client 6', logo: cl5 },
+    { id: 6, name: 'Client 6', logo: cl6 },
+    { id: 6, name: 'Client 6', logo: cl7 },
+    { id: 6, name: 'Client 6', logo: cl8 },
+    { id: 6, name: 'Client 6', logo: cl9 },
+    { id: 6, name: 'Client 6', logo: cl10 },
+    { id: 6, name: 'Client 6', logo: cl11 },
   ];
 
   const [expanded, setExpanded] = useState(false);
-  const [animating, setAnimating] = useState(false);
   const sliderRef = useRef(null);
-  const autoScrollRef = useRef(null);
+  const scrollIntervalRef = useRef(null);
 
-  // Handle view all clients button click
   const handleViewAllClients = () => {
-    setAnimating(true);
-    setTimeout(() => {
-      setExpanded(!expanded);
-      setAnimating(false);
-    }, 300);
+    setExpanded(!expanded);
   };
 
-  // Set up auto-scrolling for the carousel view
   useEffect(() => {
     if (!expanded && sliderRef.current) {
       let position = 0;
       const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
-      
+
       const scroll = () => {
-        if (sliderRef.current) {
-          if (position >= maxScroll) {
-            position = 0;
-          } else {
-            position += 1;
-          }
-          sliderRef.current.scrollLeft = position;
+        if (!sliderRef.current) return;
+        position += 1.5;
+        if (position >= maxScroll) {
+          position = 0;
         }
+        sliderRef.current.scrollTo({
+          left: position,
+          behavior: 'smooth',
+        });
       };
-      
-      autoScrollRef.current = setInterval(scroll, 50);
-      
-      return () => {
-        if (autoScrollRef.current) {
-          clearInterval(autoScrollRef.current);
-        }
-      };
+
+      scrollIntervalRef.current = setInterval(scroll, 30);
+
+      return () => clearInterval(scrollIntervalRef.current);
     }
   }, [expanded]);
 
-  // Stop auto-scrolling when user interacts with the slider
-  const handleUserInteraction = () => {
-    if (autoScrollRef.current) {
-      clearInterval(autoScrollRef.current);
-      // Restart after 5 seconds of inactivity
-      setTimeout(() => {
-        if (!expanded && sliderRef.current) {
-          autoScrollRef.current = setInterval(() => {
-            if (sliderRef.current) {
-              sliderRef.current.scrollLeft += 1;
-            }
-          }, 50);
-        }
-      }, 5000);
-    }
-  };
-
-  // Get displayed clients based on expanded state
-  const getDisplayedClients = () => {
-    return expanded ? allClients : allClients.slice(0, 5);
-  };
+  const displayedClients = expanded ? allClients : allClients.slice(0, 5);
 
   return (
-    <div className="clients-container" style={{
-      backgroundColor: '#000',
-      padding: '60px 20px',
-      width: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      overflow: 'hidden'
-    }}>
+    <div
+      className="clients-container"
+      style={{
+       
+        padding: '40px 15px',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
       {!expanded ? (
-        // Carousel view (automatically scrolls)
-        <div 
+        <div
           ref={sliderRef}
-          className="clients-carousel" 
+          className="clients-carousel"
           style={{
             display: 'flex',
-            gap: '20px',
+            gap: '16px',
             width: '100%',
             maxWidth: '1200px',
             overflowX: 'hidden',
-            marginBottom: '60px',
-            paddingBottom: '10px',
-            opacity: animating ? 0 : 1,
-            transition: 'opacity 0.3s ease'
+            marginBottom: '30px',
+            padding: '5px',
           }}
-          onMouseDown={handleUserInteraction}
-          onTouchStart={handleUserInteraction}
         >
-          {/* Double the client list to create seamless scrolling effect */}
           {[...allClients, ...allClients].map((client, index) => (
-            <div 
-              key={`${client.id}-${index}`} 
+            <div
+              key={`${client.id}-${index}`}
               className="client-box"
               style={{
-                minWidth: '200px',
-                height: '150px',
-                border: '1px solid #333',
+                minWidth: '130px',
+                height: '70px',
+              
+                borderRadius: '8px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '15px',
-                flexShrink: 0
+                padding: '8px',
+                flexShrink: 0,
               }}
             >
-              <img 
-                src={client.logo} 
-                alt={`${client.name} logo`} 
-                style={{
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  filter: 'brightness(0) invert(1)' // Makes logos white
-                }}
+              <img
+                src={client.logo}
+                alt={client.name}
+                style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
               />
             </div>
           ))}
         </div>
       ) : (
-        // Grid view (all clients)
-        <div 
-          className="clients-grid" 
+        <div
+          className="clients-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-            gap: '20px',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))',
+            gap: '16px',
             width: '100%',
-            maxWidth: '1200px',
-            marginBottom: '60px',
-            opacity: animating ? 0 : 1,
-            transition: 'opacity 0.3s ease'
+            maxWidth: '1000px',
+            marginBottom: '30px',
           }}
         >
-          {getDisplayedClients().map((client) => (
-            <div 
-              key={client.id} 
+          {displayedClients.map((client) => (
+            <div
+              key={client.id}
               className="client-box"
               style={{
-                height: '150px',
-                border: '1px solid #333',
+                height: '60px',
+               
+                borderRadius: '8px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '15px'
+                padding: '8px',
               }}
             >
-              <img 
-                src={client.logo} 
-                alt={`${client.name} logo`} 
-                style={{
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  filter: 'brightness(0) invert(1)' // Makes logos white
-                }}
+              <img
+                src={client.logo}
+                alt={client.name}
+                style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
               />
             </div>
           ))}
         </div>
       )}
 
-      <button 
-        className="view-all-button"
+      <button
         style={{
-        display:'none',
+          display: 'none', // keep hidden unless needed
+          
           border: '1px solid #fff',
-          backgroundColor: 'transparent',
           color: '#fff',
-          padding: '12px 30px',
-          fontSize: '16px',
+          padding: '8px 20px',
           cursor: 'pointer',
-          transition: 'background-color 0.3s ease, color 0.3s ease'
-        }}
-        onMouseOver={(e) => {
-          e.currentTarget.style.backgroundColor = '#fff';
-          e.currentTarget.style.color = '#000';
-        }}
-        onMouseOut={(e) => {
-          e.currentTarget.style.backgroundColor = 'transparent';
-          e.currentTarget.style.color = '#fff';
+          fontSize: '14px',
+          borderRadius: '5px',
         }}
         onClick={handleViewAllClients}
       >

@@ -1,4 +1,7 @@
 import React from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import Hero from './components/Hero/Hero'
@@ -18,12 +21,21 @@ import SEO from './components/WhyChooseBranding/SEO'
 import ADS from './components/WhyChooseBranding/ADS'
 import PhotoGraphy from './components/WhyChooseBranding/PhotoGraphy'
 import VideoGraphy from './components/WhyChooseBranding/VideoGraphy'
+import ScrollToTop from './components/ScrollToTop'
 
 
 const App = () => {
+
+   useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      once: true,     
+    });
+  }, []);
   return (
     <>
     <Navbar/>
+    <ScrollToTop/>
    <Routes>
    <Route path='/' element={<Home/>}/>
    <Route path='/about' element={<AboutUs/>}/>

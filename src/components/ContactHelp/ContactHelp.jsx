@@ -1,31 +1,40 @@
 import React from 'react';
 import './ContactHelp.css';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaComments } from 'react-icons/fa';
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaWhatsapp,
+} from 'react-icons/fa';
 
 const contactCards = [
   {
     icon: <FaPhoneAlt />,
-    title: '(+655) 6654776',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit',
+    title: '+971 543060098',
+    desc: 'Feel free to call us for any inquiries or support you need.',
     action: 'Call Us Now',
+    link: 'tel:+971543060098',
   },
   {
     icon: <FaEnvelope />,
-    title: 'MAIL@PROMETIX.ID',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit',
+    title: 'hello@admagency.ae',
+    desc: 'Send us your queries or project details by email.',
     action: 'Send Email',
+    link: 'mailto:hello@admagency.ae',
   },
   {
     icon: <FaMapMarkerAlt />,
-    title: 'CALIFORNIA',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit',
+    title: 'Office 603, DNI Building - Port Saeed - Dubai',
+    desc: 'Visit us at our Dubai office for face-to-face consultation.',
     action: 'Visit Us Now',
+    link: 'https://www.google.com/maps/place/DNI+Building+-+Port+Saeed+-+Dubai',
   },
   {
-    icon: <FaComments />,
-    title: 'PROMETIX.ID',
-    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit',
-    action: 'See Profile',
+    icon: <FaWhatsapp />,
+    title: 'Chat on WhatsApp',
+    desc: 'Start a WhatsApp conversation with us for quick support.',
+    action: 'Start Chat',
+    link: 'https://wa.me/971543060098',
   },
 ];
 
@@ -41,7 +50,13 @@ const ContactHelp = () => {
 
       <div className="contact-cards">
         {contactCards.map((card, index) => (
-          <div className="contact-card" key={index}>
+          <a
+            key={index}
+            className="contact-card"
+            href={card.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="card-icon">{card.icon}</div>
             <h3>{card.title}</h3>
             <hr />
@@ -49,7 +64,7 @@ const ContactHelp = () => {
             <div className="card-action">
               {card.action} <span>→</span>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
