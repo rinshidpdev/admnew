@@ -49,7 +49,9 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="nav-links desktop-nav">
           <Link to="/" className="nav-link" onClick={() => setIsServicesOpen(false)}>Home</Link>
+          <Link to="/team" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Team</Link>
           <Link to="/about" className="nav-link" onClick={() => setIsServicesOpen(false)}>About</Link>
+          
 
           <div
             className="dropdown"
@@ -92,7 +94,9 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="mobile-menu">
           <Link to="/" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+          <Link to="/team" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Team</Link>
           <Link to="/about" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+          
 
           <div className="mobile-dropdown">
             <button className="mobile-dropdown-toggle" onClick={() => setIsServicesOpen(!isServicesOpen)}>

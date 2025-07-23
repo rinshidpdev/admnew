@@ -22,6 +22,8 @@ import ADS from './components/WhyChooseBranding/ADS'
 import PhotoGraphy from './components/WhyChooseBranding/PhotoGraphy'
 import VideoGraphy from './components/WhyChooseBranding/VideoGraphy'
 import ScrollToTop from './components/ScrollToTop'
+import TeamMemberDetail from './components/TeamSec/TeamMemberDetail';
+import Team from './pages/Team';
 
 
 const App = () => {
@@ -48,6 +50,8 @@ const App = () => {
    <Route path='/services/paid-ads' element={<ADS/>}/>
    <Route path='/services/photo-graphy' element={<PhotoGraphy/>}/>
    <Route path='/services/video-graphy' element={<VideoGraphy/>}/>
+   <Route path='/team-member/:id' element={<TeamMemberDetail/>}/>
+   <Route path='/team' element={<Team/>}/>
   
 
    </Routes>

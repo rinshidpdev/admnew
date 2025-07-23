@@ -8,7 +8,7 @@ const AboutUs = () => {
   return (
     <>
     <AboutSec/>
-    <TeamSec/>
+   
     <AboutCeo/>
     <Faq/>
     </>
